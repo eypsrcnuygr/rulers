@@ -4,6 +4,7 @@ require "rulers/version"
 require "rulers/routing"
 require "rulers/util"
 require "rulers/dependencies"
+require "rulers/controller"
 
 module Rulers
   class Application
@@ -16,7 +17,7 @@ module Rulers
       controller = klass&.new(env)
       begin
         text = controller.send(act)
-        if controller.instance_of? HomeController
+        if controller.class.to_s == 'HomeController'
           return [302,
             {'Content-Type' => 'text/html'}, [text]]
         end
@@ -27,13 +28,5 @@ module Rulers
         ["Error: #{exception}"]]
       end
     end
-  end
-
-  class Controller
-    def initialize(env)
-      @env = env
-    end
-
-    attr_reader :env
   end
 end
