@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
-require 'rulers/version'
-require 'rulers/routing'
+require "rulers/version"
+require "rulers/routing"
+require "rulers/util"
+require "rulers/dependencies"
+
 module Rulers
   class Application
     def call(env)

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rulers (0.1.0)
+    rulers (0.1.1)
       rack
 
 GEM
@@ -13,13 +13,13 @@ GEM
     rake (10.5.0)
 
 PLATFORMS
-  ruby
+  arm64-darwin-21
 
 DEPENDENCIES
-  bundler (~> 1.17)
+  bundler
   rack-test
   rake (~> 10.0)
   rulers!
 
 BUNDLED WITH
-   1.17.2
+   2.3.7
